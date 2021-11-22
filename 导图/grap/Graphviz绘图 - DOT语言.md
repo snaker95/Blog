@@ -34,7 +34,7 @@ Mac下直接通过`brew install graphviz`了，也可以直接从官网下载。
 
 Graphviz画图只需要两步。第一步创建文本文件并命令为x.dot，输入以下内容：
 
-```
+```dot
 graph demo {
     "Browser" -- {"Chrome", "Fiefox", "Safari", "..."}
 }
@@ -42,7 +42,7 @@ graph demo {
 
 第二步，使用命令将文本内容转换为图片。
 
-```
+```shell
 dot demo.dot -T png -o demo.png
 ```
 
@@ -52,7 +52,7 @@ dot demo.dot -T png -o demo.png
 
 上面是用`dot`命令来生产，也可以用Graphviz中包含的其他命令来处理dot文本，比如用下面命令渲染出来的图片排列方式则不一样。
 
-```
+```shell
 neato demo.dot -T png -o demo.png
 ```
 
@@ -70,7 +70,7 @@ neato demo.dot -T png -o demo.png
 
 DOT中使用图（`digraph`/`graph`/`subgraph`）、节点（`node`）和边（`edge`）来描述关系图/流程图，在配合一些属性的设置完成绘图。看下面例子：
 
-```
+```digraph
 #@startdot
 
 digraph demo {

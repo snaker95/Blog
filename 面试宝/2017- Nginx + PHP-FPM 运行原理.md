@@ -26,7 +26,7 @@ description: Nginx + PHP-FPM 运行原理
   2. PHP-FPM (PHP FastCGI Process Manager)是PHP FastCGI的管理器, 包含了master(`PHP-FPM`)和worker(`php-cgi`)两种进程: master进程仅有一个, 负责监听端口, 接收web server的请求; worker进程为N个, 每worker进程都内嵌一个PHP解析器;
   * 处理流程:
   * * FPM 的 master 进程接收到请求
-  * * master 进程根据配置指派特定的 worker 进程进行请求处理，如果没有可用进程，返回错误，这也是我们配合 Nginx 遇到502错误比较多的原因。
+  * * master 进程根	据配置指派特定的 worker 进程进行请求处理，如果没有可用进程，返回错误，这也是我们配合 Nginx 遇到502错误比较多的原因。
   * * worker 进程处理请求，如果超时，返回504错误
   * * 请求处理结束，返回结果
 

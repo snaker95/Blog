@@ -89,6 +89,7 @@ dep prune -v
 
 ```shell
 dep ensure -update -v 
+dep ensure -update github.com/pkg/foo github.com/pkg/bar
 ```
 
 
@@ -115,7 +116,7 @@ func main() {
 ```
 这个时候如果直接执行更新依赖
 ```shell
-dep ensure -update -v
+dep ensure -update -v [具体项目地址]
 ```
 你会发现Gopkg.lock没有变化，仅Gopkg.toml和vendor发生了变。
 Gopkg.toml

@@ -28,6 +28,7 @@ make install
 清单 1
 
 ```protobuf
+syntax = "proto2"
 package lm;
 message helloworld 
 { 

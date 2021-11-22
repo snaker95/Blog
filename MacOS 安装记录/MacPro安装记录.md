@@ -1,5 +1,7 @@
 # mac pro 安装记录
 
+[TOC]
+
 ## brew 安装
 
 ```shell
@@ -50,6 +52,9 @@ cd ~/Develop/GitHub && git clone https://github.com/aurora/iterm2-zmodem.git
 # ----------------- 终端类 ---------------------
 # 安装iterm2 终端
 brew cask install iterm2
+# 改写 rm
+brew install rmtrash
+alias rm='rmtrash'
 # 安装windows远程工具 microsoft-remote-desktop
 brew search microsoft-remote-desktop
 brew cask install homebrew/cask-versions/microsoft-remote-desktop-beta
@@ -156,7 +161,8 @@ docker run --name php-fpm5.6 -p 9000:9000 -v ~/Develop/WebServer/php:/var/www/ht
 # Nginx
 docker run --name nginx -v ~/Develop/WebServer:/usr/share/nginx/html -v ~/Develop/Docker/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v ~/Develop/Docker/nginx/conf/conf.d:/etc/nginx/conf.d --restart=on-failure:10 --link php-fpm5.6 --link php-fpm7 -p 80:80 -d nginx
 
-
+# jupyter-notebok - go
+docker run --name jupyter-notebok -p 8888:8888  --restart=on-failure:10 -v ~/Develop/JupyterBook:/go/src/JupyterBook gopherdata/gophernotes:latest-ds
 # idea-license-server
 docker run --name idea_licence_server  --restart=on-failure:10 -p 1027:1017 -e USER="$USER" -d dominate/idea-license-server
 
